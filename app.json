@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "MBAPortfolio",
+    "slug": "mbaportfolio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "rw.ac.ines.ug2527659.mbaportfolio",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "MBAPortfolio needs gallery access to choose your profile photo.",
+          "cameraPermission": "MBAPortfolio needs camera access to take your profile photo."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a6b99f09-4d25-42bb-8e65-d5aadd461ac7"
+      }
+    },
+    "owner": "ug2527659"
+  }
+}
