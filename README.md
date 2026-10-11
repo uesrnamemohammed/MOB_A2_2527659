@@ -34,7 +34,7 @@ eas build -p android --profile preview
 ## Release details
 - Tested device: Samsung Galaxy A14 (SM-A145P)
 - Android version: 15
-- Final commit hash: FINAL_COMMIT_HASH
+- Final commit hash: 3ea68ca
 - Release link: https://github.com/uesrnamemohammed/MOB_A2_2527659/releases/tag/v1.0.0
 - APK link: https://github.com/uesrnamemohammed/MOB_A2_2527659/releases/download/v1.0.0/MOB_A2_2527659.apk
 
