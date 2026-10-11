@@ -65,10 +65,12 @@ export default function EditorScreen() {
 
   const pick = async (source: 'camera' | 'gallery') => {
     try {
-      const perm = source === 'camera' ? await ImagePicker.requestCameraPermissionsAsync() : await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (!perm.granted) {
-        setMediaMessage(`${source === 'camera' ? 'Camera' : 'Gallery'} permission denied. Enable it in system settings or use the other option.`);
-        return;
+      if (source === 'camera') {
+        const perm = await ImagePicker.requestCameraPermissionsAsync();
+        if (!perm.granted) {
+          setMediaMessage('Camera permission denied. Enable it in system settings or choose from the gallery.');
+          return;
+        }
       }
       const options: ImagePicker.ImagePickerOptions = { mediaTypes: ['images'], allowsEditing: true, aspect: [1, 1], quality: 0.7 };
       const result = source === 'camera' ? await ImagePicker.launchCameraAsync(options) : await ImagePicker.launchImageLibraryAsync(options);
@@ -78,8 +80,8 @@ export default function EditorScreen() {
       }
       await setImage(result.assets[0].uri);
       setMediaMessage('Profile photo updated.');
-    } catch {
-      setMediaMessage('Could not access the photo. Please try again.');
+    } catch (e) {
+      setMediaMessage(`Could not access the photo: ${e instanceof Error ? e.message : 'unknown error'}`);
     }
   };
 

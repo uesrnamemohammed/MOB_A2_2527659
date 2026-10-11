@@ -33,6 +33,7 @@ export default function RootNavigator() {
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: colors.muted,
           tabBarLabelStyle: { fontSize: 12 },
+          tabBarIconStyle: { display: 'none' },
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
